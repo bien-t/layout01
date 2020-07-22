@@ -9,26 +9,28 @@
 </head>
 
 <body>
-    <nav>
-        <img src="" alt="logo">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Menu</a></li>
-            <li><a href="#">About</a></li>
-            <li>Pages
-                <ul>
-                    <li><a href="">Reservation</a></li>
-                    <li><a href="">Stuff</a></li>
-                    <li><a href="">Gallery</a></li>
+    <nav class="navigation">
+        <a href="#" class="navigation__logo"><img src="images/logo.png" alt="Restaurant logo"></a>
+        <ul class="navigation__links">
+            <li><a href="#" class="navigation__mainLink">Home</a></li>
+            <li><a href="#" class="navigation__mainLink">Menu</a></li>
+            <li><a href="#" class="navigation__mainLink">About</a></li>
+            <li class="navigation__submenu">
+                <span class="navigation__mainLink navigation__mainLink__arrow">Pages</span>
+                <ul class="navigation__subLinks">
+                    <li><a href="#" class="navigation__subLink">Reservation</a></li>
+                    <li><a href="#" class="navigation__subLink">Stuff</a></li>
+                    <li><a href="#" class="navigation__subLink">Gallery</a></li>
                 </ul>
             </li>
-            <li>Blog
-                <ul>
-                    <li><a href="">blog</a></li>
-                    <li><a href="">blog Single</a></li>
+            <li class="navigation__submenu">
+                <span class="navigation__mainLink navigation__mainLink__arrow">Blog</span>
+                <ul class="navigation__subLinks ">
+                    <li><a href="#" class="navigation__subLink">blog</a></li>
+                    <li><a href="#" class="navigation__subLink">blog Single</a></li>
                 </ul>
             </li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#" class="navigation__mainLink">Contact</a></li>
 
         </ul>
     </nav>
@@ -121,7 +123,7 @@
             <p>Ipsum Street, Lorem Tower, MO, Columbia, 508000
 
                 +01 2000 800 9999
-                
+
                 info@admin.com</p>
         </div>
         <div>

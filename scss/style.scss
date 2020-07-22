@@ -2,3 +2,96 @@
 
 
 @import 'partials/base';
+@import url('https://fonts.googleapis.com/css?family=Arbutus+Slab');
+@import url('https://fonts.googleapis.com/css?family=Athiti:400,500,600');
+
+$blackColor: #000;
+$whiteColor: #fff;
+$mainColor1: #D0A772;
+$navBackgroundColor:#F8F9FA;
+
+body {
+    font-family: 'Athiti', sans-serif;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $navBackgroundColor;
+    position: fixed;
+    top: 0;
+    height: 95px;
+    width: 100%;
+    padding: 0 20%;
+
+    &__logo {
+        margin-right: auto;
+    }
+
+    &__links {
+        display: flex;
+        list-style-type: none;
+    }
+
+    &__mainLink {
+        display: block;
+        width: 85px;
+        height: 35px;
+        padding-top: 7px;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        color: $blackColor;
+
+        &:hover {
+            background-color: $mainColor1;
+            color: $whiteColor;
+        }
+    }
+
+    &__mainLink__arrow::after {
+        content: '\025BE';
+    }
+
+    &__subLinks {
+        display: none;
+        width: 170px;
+        padding: 0;
+        background-color: $whiteColor;
+        list-style-type: none;
+        border-radius: 5px;
+        box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.5);
+
+        :first-child {
+            margin-top: 4px;
+        }
+
+        :last-child {
+            margin-bottom: 4px;
+        }
+    }
+
+    &__subLink {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        text-decoration: none;
+        color: $blackColor;
+
+        &:hover {
+            background-color: $mainColor1;
+            color: $whiteColor;
+        }
+    }
+
+    &__submenu {
+        position: relative;
+    }
+
+    &__submenu:hover &__subLinks {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+    }
+}
