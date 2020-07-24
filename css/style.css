@@ -382,6 +382,7 @@ body {
   height: 95px;
   width: 100%;
   padding: 0 20%;
+  z-index: 10;
 }
 
 .navigation__logo {
@@ -404,6 +405,7 @@ body {
   text-align: center;
   text-decoration: none;
   color: #000;
+  cursor: pointer;
 }
 
 .navigation__mainLink:hover {
@@ -460,5 +462,69 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   position: absolute;
+}
+
+.slider {
+  color: #fff;
+  position: relative;
+  margin-top: 95px;
+}
+
+.slider__element {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url(../images/slider-01.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.slider__element h1 {
+  font-size: 6.4rem;
+  font-family: 'Arbutus Slab', serif;
+  z-index: 1;
+}
+
+.slider__element p {
+  font-size: 1.8rem;
+  z-index: 1;
+}
+
+.slider__element button {
+  text-transform: uppercase;
+  border: 2px solid #D0A772;
+  padding: 15px 30px;
+  background-color: transparent;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.slider__element button:hover {
+  background-color: #D0A772;
+}
+
+.slider__overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 0;
 }
 /*# sourceMappingURL=style.css.map */

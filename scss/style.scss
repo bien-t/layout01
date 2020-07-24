@@ -14,6 +14,22 @@ body {
     font-family: 'Athiti', sans-serif;
 }
 
+@mixin reservationButton {
+        text-transform: uppercase;
+        border: 2px solid $mainColor1;
+        padding: 15px 30px;
+        background-color: transparent;
+        cursor: pointer;
+        color: $whiteColor;
+        border-radius: 5px;
+        font-weight: bold;
+        @content;
+
+        &:hover {
+            background-color: $mainColor1;
+        }
+}
+
 .navigation {
     display: flex;
     justify-content: center;
@@ -24,6 +40,7 @@ body {
     height: 95px;
     width: 100%;
     padding: 0 20%;
+    z-index: 10;
 
     &__logo {
         margin-right: auto;
@@ -43,6 +60,7 @@ body {
         text-align: center;
         text-decoration: none;
         color: $blackColor;
+        cursor: pointer;
 
         &:hover {
             background-color: $mainColor1;
@@ -93,5 +111,52 @@ body {
         display: flex;
         flex-direction: column;
         position: absolute;
+    }
+}
+
+
+.slider {
+    color: $whiteColor;
+    position: relative;
+    margin-top: 95px;
+
+    &__element {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        background-image: url(../images/slider-01.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        h1 {
+            font-size: 6.4rem;
+            font-family: 'Arbutus Slab', serif;
+            z-index: 1;
+        }
+
+        p {
+            font-size: 1.8rem;
+            z-index: 1;
+
+        }
+
+        button {
+            @include reservationButton() {
+                z-index: 1;
+            }
+        }
+    }
+
+    &__overlay {
+        background-color: rgba(0, 0, 0, 0.5);
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        z-index: 0;
     }
 }
