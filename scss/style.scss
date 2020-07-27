@@ -9,25 +9,28 @@ $blackColor: #000;
 $whiteColor: #fff;
 $mainColor1: #D0A772;
 $navBackgroundColor:#F8F9FA;
+$fontMainColor: #666666;
 
 body {
     font-family: 'Athiti', sans-serif;
+    color: $fontMainColor;
 }
 
-@mixin reservationButton {
-        text-transform: uppercase;
-        border: 2px solid $mainColor1;
-        padding: 15px 30px;
-        background-color: transparent;
-        cursor: pointer;
-        color: $whiteColor;
-        border-radius: 5px;
-        font-weight: bold;
-        @content;
+@mixin reservationButton($fontColor:$whiteColor,$hoverColor:$mainColor1) {
+    text-transform: uppercase;
+    border: 2px solid $mainColor1;
+    padding: 15px 30px;
+    background-color: transparent;
+    cursor: pointer;
+    color: $fontColor;
+    border-radius: 5px;
+    font-weight: bold;
+    @content;
 
-        &:hover {
-            background-color: $mainColor1;
-        }
+    &:hover {
+        background-color: $hoverColor;
+        color: $fontColor;
+    }
 }
 
 .navigation {
@@ -158,5 +161,53 @@ body {
         position: absolute;
         top: 0;
         z-index: 0;
+    }
+}
+
+
+.about {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 60px 0;
+
+    img {
+        max-width: 550px;
+        max-height: 550px;
+        box-shadow: -10px -10px 0px $mainColor1;
+    }
+
+    &__description {
+        max-width: 550px;
+        padding: 0 30px;
+
+        h2 {
+            font-family: 'Arbutus Slab', serif;
+            font-size: 2.7rem;
+            color: $blackColor;
+
+            span {
+                color: $mainColor1;
+            }
+        }
+
+        p:first-of-type {
+            line-height: 0;
+            color: $blackColor;
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+
+        p {
+            font-size: 1.8rem;
+            line-height: 1.8;
+        }
+
+        button {
+            @include reservationButton($whiteColor,$mainColor1){
+                color: $mainColor1;
+            };
+        }
     }
 }
