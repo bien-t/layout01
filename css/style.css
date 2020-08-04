@@ -365,6 +365,7 @@ body {
 body {
   font-family: 'Athiti', sans-serif;
   color: #666666;
+  max-width: 1900px;
 }
 
 .navigation {
@@ -530,6 +531,23 @@ body {
   z-index: 0;
 }
 
+.slider__leftArrow {
+  height: 70px;
+  width: 70px;
+  background-color: #D0A772;
+  position: absolute;
+  top: 50%;
+}
+
+.slider__rightArrow {
+  height: 70px;
+  width: 70px;
+  background-color: #D0A772;
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+
 .about {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -559,6 +577,7 @@ body {
   font-family: "Arbutus Slab", serif;
   font-size: 2.7rem;
   color: #000;
+  font-weight: normal;
 }
 
 .about__description h2 span {
@@ -636,12 +655,14 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-align: center;
 }
 
 .menu h2 {
   color: #000;
   font-size: 2.8rem;
   font-family: "Arbutus Slab", serif;
+  font-weight: normal;
 }
 
 .menu p {
@@ -750,5 +771,128 @@ body {
           transform: translateY(0);
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
+}
+
+.gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.gallery h2 {
+  margin: 170px 0 0 0;
+  color: #000;
+  font-family: "Arbutus Slab", serif;
+  font-size: 2.8rem;
+  font-weight: normal;
+}
+
+.gallery p {
+  margin-bottom: 80px;
+  font-size: 1.8rem;
+}
+
+.gallery__items {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-grid-columns: (minmax(300px, 600px))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 600px));
+  width: 100%;
+  gap: 30px;
+}
+
+.gallery__item img {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery__item:hover {
+  cursor: pointer;
+  -webkit-transform: scale(105%);
+          transform: scale(105%);
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.reviews {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.reviews h2 {
+  color: #000;
+  font-family: "Arbutus Slab", serif;
+  font-size: 2.8rem;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+.reviews p {
+  font-size: 1.8rem;
+}
+
+.reviews__container {
+  max-width: 750px;
+  position: relative;
+}
+
+.reviews__review {
+  padding: 0 20px;
+}
+
+.reviews__review img {
+  border-radius: 50vh;
+  width: 150px;
+  border: 1px solid #666666;
+  padding: 5px;
+}
+
+.reviews__review h4 {
+  color: #D0A772;
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  margin-bottom: 0;
+}
+
+.reviews__review h5 {
+  font-weight: normal;
+}
+
+.reviews__leftArrow {
+  height: 50px;
+  width: 50px;
+  background-color: #D0A772;
+  position: absolute;
+  top: 50%;
+  left: -100px;
+}
+
+.reviews__rightArrow {
+  height: 50px;
+  width: 50px;
+  background-color: #D0A772;
+  position: absolute;
+  top: 50%;
+  right: -100px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -18,6 +18,7 @@ serif;
 body {
     font-family: 'Athiti', sans-serif;
     color: $fontMainColor;
+    max-width: 1900px;
 }
 
 @mixin reservationButton($fontColor:$whiteColor, $hoverColor:$mainColor1) {
@@ -35,6 +36,15 @@ body {
         background-color: $hoverColor;
         color: $fontColor;
     }
+}
+
+@mixin arrowButton($width:50px,$height:50px) {
+    height: $height;
+    width: $width;
+    background-color: $mainColor1;
+    position: absolute;
+    top: 50%;
+    @content;
 }
 
 .navigation {
@@ -166,6 +176,14 @@ body {
         top: 0;
         z-index: 0;
     }
+
+    &__leftArrow {
+        @include arrowButton(70px,70px);
+    }
+    &__rightArrow {
+        @include arrowButton(70px,70px);
+        right: 0;
+    }
 }
 
 
@@ -190,6 +208,7 @@ body {
             font-family: $font2;
             font-size: 2.7rem;
             color: $blackColor;
+            font-weight: normal;
 
             span {
                 color: $mainColor1;
@@ -212,8 +231,6 @@ body {
             @include reservationButton($whiteColor, $mainColor1) {
                 color: $mainColor1;
             }
-
-            ;
         }
     }
 }
@@ -249,11 +266,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 
     h2 {
         color: $blackColor;
         font-size: 2.8rem;
         font-family: $font2;
+        font-weight: normal;
     }
 
     p {
@@ -325,6 +344,7 @@ body {
             color: $whiteColor;
             transform: translateY(100%);
             padding: 0 10px;
+
             h3 {
                 font-size: 2.4rem;
                 font-family: $font2;
@@ -335,7 +355,7 @@ body {
                 border-bottom: 2px dashed $blackColor;
                 padding-bottom: 15px;
             }
-            
+
             span {
                 font-size: 2.8rem;
                 font-weight: 600;
@@ -345,6 +365,106 @@ body {
         &:hover &__content {
             transform: translateY(0);
             transition: all 0.25s ease-in-out;
+        }
+    }
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+
+    h2 {
+        margin: 170px 0 0 0;
+        color: $blackColor;
+        font-family: $font2;
+        font-size: 2.8rem;
+        font-weight: normal;
+    }
+
+    p {
+        margin-bottom: 80px;
+        font-size: 1.8rem;
+    }
+
+    &__items {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 600px));
+        width: 100%;
+        gap: 30px;
+    }
+
+    &__item {
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(105%);
+            transition: all 0.2s ease-in;
+        }
+    }
+}
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    h2 {
+        color: $blackColor;
+        font-family: $font2;
+        font-size: 2.8rem;
+        font-weight: normal;
+        margin-bottom: 0;
+    }
+
+    p {
+        font-size: 1.8rem;
+    }
+
+    &__container {
+        max-width: 750px;
+        position: relative;
+    }
+
+    &__review {
+        padding: 0 20px;
+
+        img {
+            border-radius: 50vh;
+            width: 150px;
+            border: 1px solid $fontMainColor;
+            padding: 5px;
+        }
+
+        h4 {
+            color: $mainColor1;
+            text-transform: uppercase;
+            font-size: 2.4rem;
+            margin-bottom: 0;
+        }
+
+        h5 {
+            font-weight: normal;
+        }
+    }
+
+    &__leftArrow {
+        @include arrowButton(){
+            left: -100px;
+        }
+    }
+
+    &__rightArrow {
+        @include arrowButton(){
+            right: -100px;
         }
     }
 }
