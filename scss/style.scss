@@ -5,6 +5,12 @@
 @import url('https://fonts.googleapis.com/css?family=Arbutus+Slab');
 @import url('https://fonts.googleapis.com/css?family=Athiti:400,500,600');
 
+
+@import "vendors/fontawesome.scss";
+@import "vendors/solid.scss";
+@import "vendors/brands.scss";
+
+
 $blackColor: #000;
 $whiteColor: #fff;
 $mainColor1: #D0A772;
@@ -21,7 +27,7 @@ body {
     max-width: 1900px;
 }
 
-@mixin reservationButton($fontColor:$whiteColor, $hoverColor:$mainColor1) {
+@mixin reservationButton($fontColor, $hoverColor) {
     text-transform: uppercase;
     border: 2px solid $mainColor1;
     padding: 15px 30px;
@@ -38,12 +44,21 @@ body {
     }
 }
 
-@mixin arrowButton($width:50px,$height:50px) {
+@mixin arrowButton($width, $height, $fontsize) {
     height: $height;
     width: $width;
     background-color: $mainColor1;
     position: absolute;
     top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $whiteColor;
+
+    i {
+        font-size: $fontsize;
+    }
+
     @content;
 }
 
@@ -87,6 +102,7 @@ body {
 
     &__mainLink__arrow::after {
         content: '\025BE';
+        padding-left: 3px;
     }
 
     &__subLinks {
@@ -162,7 +178,7 @@ body {
         }
 
         button {
-            @include reservationButton() {
+            @include reservationButton($whiteColor,$mainColor1) {
                 z-index: 1;
             }
         }
@@ -178,10 +194,12 @@ body {
     }
 
     &__leftArrow {
-        @include arrowButton(70px,70px);
+        @include arrowButton(70px, 70px, 4rem);
+
     }
+
     &__rightArrow {
-        @include arrowButton(70px,70px);
+        @include arrowButton(70px, 70px, 4rem);
         right: 0;
     }
 }
@@ -273,10 +291,12 @@ body {
         font-size: 2.8rem;
         font-family: $font2;
         font-weight: normal;
+        margin-top: 80px;
     }
 
     p {
         margin-top: 0;
+        margin-bottom: 60px;
         font-size: 1.8rem;
         font-weight: 200;
     }
@@ -375,7 +395,6 @@ body {
     align-items: center;
     text-align: center;
 
-
     h2 {
         margin: 170px 0 0 0;
         color: $blackColor;
@@ -406,7 +425,7 @@ body {
         &:hover {
             cursor: pointer;
             transform: scale(105%);
-            transition: all 0.2s ease-in;
+            transition: all 0.2s ease-in-out;
         }
     }
 }
@@ -423,6 +442,7 @@ body {
         font-size: 2.8rem;
         font-weight: normal;
         margin-bottom: 0;
+        margin-top: 170px;
     }
 
     p {
@@ -432,6 +452,7 @@ body {
     &__container {
         max-width: 750px;
         position: relative;
+        margin-bottom: 60px;
     }
 
     &__review {
@@ -452,19 +473,211 @@ body {
         }
 
         h5 {
+            margin-top: 10px;
             font-weight: normal;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.5rem;
+            line-height: 1.8;
         }
     }
 
     &__leftArrow {
-        @include arrowButton(){
+        @include arrowButton(50px,50px,2.8rem) {
             left: -100px;
         }
     }
 
     &__rightArrow {
-        @include arrowButton(){
+        @include arrowButton(50px,50px,2.8rem) {
             right: -100px;
         }
     }
+}
+
+.contact {
+    min-height: 120px;
+    background-color: $mainColor1;
+    color: $whiteColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__container {
+        max-width: 1200px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 20px;
+
+        @media(max-width:800px) {
+            flex-direction: column;
+            max-width: 70%;
+            padding: 20px 0;
+        }
+    }
+
+    &__element {
+        display: flex;
+        
+        @media(max-width:800px) {
+            margin: 20px 0;
+        }
+
+        i {
+            font-size: 3rem;
+            margin-right: 20px;
+            color: $mainColor1;
+            background-color: $whiteColor;
+            border-radius: 50vh;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &__content {
+        h4 {
+            font-size: 2rem;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin: 10px 0 0 0;
+        }
+    }
+}
+
+.footer {
+    background-image: url(../images/footer-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: $whiteColor;
+    position: relative;
+    z-index: 0;
+
+    &::before {
+        background-color: rgba($blackColor, $alpha: 0.8);
+        position: absolute;
+        content: '';
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 0 20px 0;
+
+        @media(max-width:1200px) {
+            max-width: 70%;
+        }
+    }
+
+    &__element {
+        padding: 0 20px;
+        width: 25%;
+
+        @media(max-width:1200px) {
+            width: 50%;
+            margin-top: 10px;
+
+        }
+
+        @media(max-width:850px) {
+            width: 100%;
+        }
+
+        h4 {
+            font-weight: normal;
+            text-transform: uppercase;
+            font-size: 2.4rem;
+            border-bottom: 1px dashed rgba($mainColor1, $alpha: 0.5);
+            margin: 0 0 10px 0;
+            padding-bottom: 10px;
+        }
+
+        p:first-of-type {
+            line-height: 1.8;
+        }
+        
+        p {
+            font-size: 1.5rem;
+            font-weight: normal;
+        }
+
+        &--fontSize {
+            p {
+                font-size: 1.9rem;
+                padding-bottom: 10px;
+            }
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            padding: 0;
+            margin-top: 30px;
+
+           i {
+            color: $whiteColor;
+            font-size: 3rem;
+            }
+        }
+        
+        #footer__subscribeEmail {
+            width: 100%;
+            border: none;
+            background-color: rgba($blackColor, $alpha: 0.7);
+            color: $whiteColor;
+            font-size: 1.9rem;
+            padding: 10px;
+        }
+    }
+
+    &__subscribeButton {
+        @include reservationButton($whiteColor,$blackColor){
+            width: 100%;
+            background-color: $mainColor1;
+            border-radius: 0;
+            border: none;
+            transition: all 0.5s ease-in-out;
+        };
+    }
+
+    &__copyright {
+        background-color: $blackColor;
+        text-align: center;
+        padding: 30px 0;
+        border-top: 1px dashed rgba($mainColor1, $alpha: 0.5);
+    }
+}
+
+.backToTop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-color: $mainColor1;
+    width: 40px;
+    height: 40px;
+    bottom: 40px;
+    right: 40px;
+    font-size: 3rem;
+    border-radius: 2px;
+    cursor: pointer;
 }
