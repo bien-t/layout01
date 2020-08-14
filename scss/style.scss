@@ -25,6 +25,7 @@ body {
     font-family: 'Athiti', sans-serif;
     color: $fontMainColor;
     max-width: 1900px;
+    min-width: 500px;
 }
 
 @mixin reservationButton($fontColor, $hoverColor) {
@@ -71,8 +72,9 @@ body {
     top: 0;
     height: 95px;
     width: 100%;
-    padding: 0 20%;
+    padding: 10px 20%;
     z-index: 10;
+    font-size: 1.8rem;
 
     &__logo {
         margin-right: auto;
@@ -97,6 +99,8 @@ body {
         &:hover {
             background-color: $mainColor1;
             color: $whiteColor;
+            transition: all 0.4s ease-in-out;
+
         }
     }
 
@@ -123,6 +127,18 @@ body {
         }
     }
 
+    &__subLinks--open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+
+        @media (max-width: 800px) {
+            position: relative;
+            margin: 0 2px;
+            width: 99%;
+        }
+    }
+
     &__subLink {
         display: block;
         width: 100%;
@@ -140,11 +156,70 @@ body {
         position: relative;
     }
 
-    &__submenu:hover &__subLinks {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
+    // &__submenu:hover &__subLinks {
+    //     display: flex;
+    //     flex-direction: column;
+    //     position: absolute;
+    // }
+
+    .active {
+        background-color: $mainColor1;
+        color: $whiteColor;
     }
+
+    // MOBILE
+    @media (max-width: 800px) {
+        padding: 0 5%;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        height: auto;
+    }
+
+    .fa-bars {
+        display: none;
+        font-size: 4rem;
+
+        @media (max-width: 800px) {
+            display: block;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+    }
+
+    &__logo {
+        @media (max-width: 800px) {
+            margin-top: 20px
+        }
+    }
+
+    &__links {
+        @media (max-width: 800px) {
+            padding-left: 0;
+        }
+
+        &__mobile {
+            @media (max-width: 800px) {
+                flex-direction: column;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 1s;
+                width: 100%;
+            }
+        }
+
+        &__mobile--active {
+            max-height: 400px;
+        }
+    }
+
+    &__mainLink {
+        @media (max-width: 800px) {
+            width: 100%;
+            text-align: left;
+            padding-left: 10px;
+        }
+    }
+    //END MOBILE
 }
 
 
@@ -178,7 +253,7 @@ body {
         }
 
         button {
-            @include reservationButton($whiteColor,$mainColor1) {
+            @include reservationButton($whiteColor, $mainColor1) {
                 z-index: 1;
             }
         }
@@ -216,6 +291,13 @@ body {
         max-width: 550px;
         max-height: 550px;
         box-shadow: -10px -10px 0px $mainColor1;
+        width: 100%;
+        height: 100%;
+
+        @media (max-width:800px) {
+            max-width: 450px;
+            max-height: 450px;
+        }
     }
 
     &__description {
@@ -414,12 +496,17 @@ body {
         grid-template-columns: repeat(auto-fit, minmax(300px, 600px));
         width: 100%;
         gap: 30px;
+
+        @media (max-width:800px) {
+            width: 90%;
+        }
     }
 
     &__item {
         img {
             width: 100%;
             height: 100%;
+
         }
 
         &:hover {
@@ -485,14 +572,22 @@ body {
     }
 
     &__leftArrow {
-        @include arrowButton(50px,50px,2.8rem) {
+        @include arrowButton(50px, 50px, 2.8rem) {
             left: -100px;
+
+            @media(max-width: 950px) {
+                left: 0;
+            }
         }
     }
 
     &__rightArrow {
-        @include arrowButton(50px,50px,2.8rem) {
+        @include arrowButton(50px, 50px, 2.8rem) {
             right: -100px;
+
+            @media(max-width: 950px) {
+                right: 0;
+            }
         }
     }
 }
@@ -521,7 +616,7 @@ body {
 
     &__element {
         display: flex;
-        
+
         @media(max-width:800px) {
             margin: 20px 0;
         }
@@ -612,7 +707,7 @@ body {
         p:first-of-type {
             line-height: 1.8;
         }
-        
+
         p {
             font-size: 1.5rem;
             font-weight: normal;
@@ -633,12 +728,12 @@ body {
             padding: 0;
             margin-top: 30px;
 
-           i {
-            color: $whiteColor;
-            font-size: 3rem;
+            i {
+                color: $whiteColor;
+                font-size: 3rem;
             }
         }
-        
+
         #footer__subscribeEmail {
             width: 100%;
             border: none;
@@ -650,13 +745,15 @@ body {
     }
 
     &__subscribeButton {
-        @include reservationButton($whiteColor,$blackColor){
+        @include reservationButton($whiteColor, $blackColor) {
             width: 100%;
             background-color: $mainColor1;
             border-radius: 0;
             border: none;
             transition: all 0.5s ease-in-out;
-        };
+        }
+
+        ;
     }
 
     &__copyright {
