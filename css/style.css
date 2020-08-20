@@ -6634,11 +6634,10 @@ body {
 .slider {
   color: #fff;
   position: relative;
-  margin-top: 95px;
+  height: 100vh;
 }
 
 .slider__element {
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6653,10 +6652,31 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-image: url(../images/slider-01.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: opacity ease-in-out 0.5s;
+  transition: opacity ease-in-out 0.5s;
+}
+
+.slider__element__1 {
+  background-image: url(../images/slider-01.jpg);
+  opacity: 1;
+}
+
+.slider__element__2 {
+  background-image: url(../images/slider-02.jpg);
+  opacity: 0;
+}
+
+.slider__element__3 {
+  background-image: url(../images/slider-03.jpg);
+  opacity: 0;
 }
 
 .slider__element h1 {
@@ -6687,7 +6707,7 @@ body {
   color: #fff;
 }
 
-.slider__overlay {
+.slider__element__overlay {
   background-color: rgba(0, 0, 0, 0.5);
   height: 100%;
   width: 100%;
@@ -6712,10 +6732,16 @@ body {
       -ms-flex-align: center;
           align-items: center;
   color: #fff;
+  cursor: pointer;
+  z-index: 5;
 }
 
 .slider__leftArrow i {
   font-size: 4rem;
+}
+
+.slider__leftArrow:hover {
+  background-color: #000;
 }
 
 .slider__rightArrow {
@@ -6734,11 +6760,47 @@ body {
       -ms-flex-align: center;
           align-items: center;
   color: #fff;
+  cursor: pointer;
+  z-index: 5;
   right: 0;
 }
 
 .slider__rightArrow i {
   font-size: 4rem;
+}
+
+.slider__rightArrow:hover {
+  background-color: #000;
+}
+
+.slider__pagination {
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+}
+
+.slider__pagination a {
+  border-radius: 50vh;
+  width: 13px;
+  height: 13px;
+  border: 2px solid #fff;
+  margin: 3px;
+}
+
+.slider__pagination .active {
+  background-color: #D0A772;
+  border-color: #D0A772;
 }
 
 .about {
@@ -7113,6 +7175,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
   color: #fff;
+  cursor: pointer;
+  z-index: 5;
   left: -100px;
 }
 
@@ -7124,6 +7188,10 @@ body {
   .reviews__leftArrow {
     left: 0;
   }
+}
+
+.reviews__leftArrow:hover {
+  background-color: #000;
 }
 
 .reviews__rightArrow {
@@ -7142,6 +7210,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
   color: #fff;
+  cursor: pointer;
+  z-index: 5;
   right: -100px;
 }
 
@@ -7153,6 +7223,10 @@ body {
   .reviews__rightArrow {
     right: 0;
   }
+}
+
+.reviews__rightArrow:hover {
+  background-color: #000;
 }
 
 .contact {

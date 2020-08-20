@@ -55,12 +55,18 @@ body {
     justify-content: center;
     align-items: center;
     color: $whiteColor;
+    cursor: pointer;
+    z-index: 5;
 
     i {
         font-size: $fontsize;
     }
 
     @content;
+
+    &:hover {
+        background-color: $blackColor;
+    }
 }
 
 .navigation {
@@ -219,6 +225,7 @@ body {
             padding-left: 10px;
         }
     }
+
     //END MOBILE
 }
 
@@ -226,19 +233,39 @@ body {
 .slider {
     color: $whiteColor;
     position: relative;
-    margin-top: 95px;
+    // margin-top: 95px;
+    height: 100vh;
 
     &__element {
-        height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         text-align: center;
         align-items: center;
-        background-image: url(../images/slider-01.jpg);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: opacity ease-in-out 0.5s;
+
+        &__1 {
+            background-image: url(../images/slider-01.jpg);
+            opacity: 1;
+        }
+
+        &__2 {
+            background-image: url(../images/slider-02.jpg);
+            opacity: 0;
+        }
+
+        &__3 {
+            background-image: url(../images/slider-03.jpg);
+            opacity: 0;
+        }
 
         h1 {
             font-size: 6.4rem;
@@ -257,15 +284,15 @@ body {
                 z-index: 1;
             }
         }
-    }
 
-    &__overlay {
-        background-color: rgba($blackColor, $alpha: 0.5);
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        z-index: 0;
+        &__overlay {
+            background-color: rgba($blackColor, $alpha: 0.5);
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            z-index: 0;
+        }
     }
 
     &__leftArrow {
@@ -276,6 +303,30 @@ body {
     &__rightArrow {
         @include arrowButton(70px, 70px, 4rem);
         right: 0;
+    }
+
+    &__pagination {
+        height: 50px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+
+        a {
+            border-radius: 50vh;
+            width: 13px;
+            height: 13px;
+            border: 2px solid $whiteColor;
+            margin: 3px;
+        }
+
+        .active {
+            background-color: $mainColor1;
+            border-color: $mainColor1;
+        }
     }
 }
 
