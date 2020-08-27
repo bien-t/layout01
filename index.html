@@ -95,13 +95,13 @@
         <h2>Special Menu</h2>
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
         <ul class="menu__navigation">
-            <li class="menu__navigation__link"><a href="#">All</a></li>
-            <li class="menu__navigation__link"><a href="#">Drinks</a></li>
-            <li class="menu__navigation__link"><a href="#">Lunch</a></li>
-            <li class="menu__navigation__link"><a href="#">Dinner</a></li>
+            <li class="menu__navigation__link"><a class="active" href="#" data-filter='all' >All</a></li>
+            <li class="menu__navigation__link"><a href="#" data-filter='drinks'>Drinks</a></li>
+            <li class="menu__navigation__link"><a href="#" data-filter='lunch'>Lunch</a></li>
+            <li class="menu__navigation__link"><a href="#" data-filter='dinner'>Dinner</a></li>
         </ul>
         <div class="menu__items">
-            <div class="menu__item">
+            <div class="menu__item menu__item__drinks">
                 <img src="images/img-01.jpg" alt="">
                 <div class="menu__item__content">
                     <h3>Special Lunch</h3>
@@ -109,7 +109,7 @@
                     <span>&dollar; 15.79</span>
                 </div>
             </div>
-            <div class="menu__item">
+            <div class="menu__item menu__item__drinks">
                 <img src="images/img-02.jpg" alt="">
                 <div class="menu__item__content">
                     <h3>Special Lunch</h3>
@@ -117,7 +117,7 @@
                     <span>&dollar; 15.79</span>
                 </div>
             </div>
-            <div class="menu__item">
+            <div class="menu__item menu__item__drinks">
                 <img src="images/img-03.jpg" alt="">
                 <div class="menu__item__content">
                     <h3>Special Lunch</h3>
@@ -125,7 +125,7 @@
                     <span>&dollar; 15.79</span>
                 </div>
             </div>
-            <div class="menu__item">
+            <div class="menu__item menu__item__lunch">
                 <img src="images/img-04.jpg" alt="">
                 <div class="menu__item__content">
                     <h3>Special Lunch</h3>
@@ -133,23 +133,23 @@
                     <span>&dollar; 15.79</span>
                 </div>
             </div>
-            <div class="menu__item">
-                <img src="images/img-05.jpg" alt="">
+            <div class="menu__item menu__item__lunch">
+                <img src="images/img-05.jpg " alt="">
                 <div class="menu__item__content">
                     <h3>Special Lunch</h3>
                     <p>Sed id magna vitae eros sagittis euismod.</p>
                     <span>&dollar; 15.79</span>
                 </div>
             </div>
-            <div class="menu__item">
-                <img src="images/img-06.jpg" alt="">
+            <div class="menu__item menu__item__lunch">
+                <img src="images/img-06.jpg " alt="">
                 <div class="menu__item__content">
                     <h3>Special Lunch</h3>
                     <p>Sed id magna vitae eros sagittis euismod.</p>
                     <span>&dollar; 15.79</span>
                 </div>
             </div>
-            <div class="menu__item">
+            <div class="menu__item menu__item__dinner">
                 <img src="images/img-07.jpg" alt="">
                 <div class="menu__item__content">
                     <h3>Special Lunch</h3>
@@ -157,7 +157,7 @@
                     <span>&dollar; 15.79</span>
                 </div>
             </div>
-            <div class="menu__item">
+            <div class="menu__item menu__item__dinner">
                 <img src="images/img-08.jpg" alt="">
                 <div class="menu__item__content">
                     <h3>Special Lunch</h3>
@@ -165,7 +165,7 @@
                     <span>&dollar; 15.79</span>
                 </div>
             </div>
-            <div class="menu__item">
+            <div class="menu__item menu__item__dinner">
                 <img src="images/img-09.jpg" alt="">
                 <div class="menu__item__content">
                     <h3>Special Lunch</h3>
@@ -288,6 +288,8 @@
     </footer>
     <script src="js/navigation.js"></script>
     <script src="js/slider.js"></script>
+    <script src="js/menu.js"></script>
+
 
 </body>
 
