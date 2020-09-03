@@ -50,9 +50,9 @@ function previousGalleryImage(galleryItems,galleryOverlayImage){
     })
 }
 
-function shake(direction, image){
-    image.style.transition = 'transform ease-out 0.4s'
-    image.style.transform = `translateX(${direction}px)`;
+function shake(value, image){
+    image.style.transition = 'transform ease-out 0.3s'
+    image.style.transform = `translateX(${value}px)`;
     setTimeout(()=>{
         image.style.transform = '';
     },400)
