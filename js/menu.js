@@ -22,7 +22,7 @@ function showCategory(filter) {
     } else {
         let category = document.querySelectorAll(`.menu__item__${filter}`);
         category.forEach((item) => {
-            item.style.transform = 'scale(100%)';
+            item.style.transform = 'scale(1)';
             item.style.height = '';
             item.style.position = 'relative';
         })
@@ -36,7 +36,7 @@ function hideCategory(filter) {
             return element.classList[1] !== `menu__item__${filter}`;
         })
         hiddenCategory.forEach((item) => {
-            item.style.transform = 'scale(0%)';
+            item.style.transform = 'scale(0)';
             item.style.height = '0';
             item.style.position = 'absolute';
         })
@@ -46,7 +46,7 @@ function hideCategory(filter) {
 function allCategory() {
     const category = document.querySelectorAll('.menu__item');
     category.forEach((item) => {
-        item.style.transform = 'scale(100%)';
+        item.style.transform = 'scale(1)';
         item.style.height = '';
         item.style.position = '';
     })

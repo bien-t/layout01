@@ -67,7 +67,7 @@
         active.classList.add('active');
         setTimeout(() => {
             active.style.transform = 'translateX(0)';
-        }, 1);
+        }, 10);
 
         item.setRightItem();
         nextActive = item.itemsArray[item.rightItem];
