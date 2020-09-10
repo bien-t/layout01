@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navigation">
+        <a href="#" class="navigation__logo"><img src="images/logo.png" alt="Restaurant logo"></a>
+        <i class="fas fa-bars"></i>
+        <ul class="navigation__links navigation__links__mobile">
+            <li><a href="index.html" class="navigation__mainLink">Home</a></li>
+            <li><a href="menu.html" class="navigation__mainLink">Menu</a></li>
+            <li><a href="about.html" class="navigation__mainLink">About</a></li>
+            <li class="navigation__submenu">
+                <span class="navigation__mainLink navigation__mainLink__arrow active">Pages</span>
+                <ul class="navigation__subLinks">
+                    <li><a href="reservation.html" class="navigation__subLink">Reservation</a></li>
+                    <li><a href="stuff.html" class="navigation__subLink">Stuff</a></li>
+                    <li><a href="gallery.html" class="navigation__subLink">Gallery</a></li>
+                </ul>
+            </li>
+            <li class="navigation__submenu">
+                <span class="navigation__mainLink navigation__mainLink__arrow">Blog</span>
+                <ul class="navigation__subLinks">
+                    <li><a href="blog.html" class="navigation__subLink">blog</a></li>
+                    <li><a href="blog-details.html" class="navigation__subLink">blog Single</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html" class="navigation__mainLink">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="title">
+        <div class="title__content">
+            <h2>Reservation</h2>
+        </div>
+    </section>
+
+    <section class="reservation">
+        <h2>Reservation</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+        <form id="reservationForm" action="">
+            <div class="form__leftSide">
+                <span>Book a table</span>
+                <input type="date" name="date" id="date" required >
+                <input type="time" name="time" id="time" required min="12:00" max="21:00">
+                <select name="numberSelect" id="numberSelect" required> 
+                    <option value="" disabled selected>Select person*</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select>
+            </div>
+            <div class="form__rightSide">
+                <span>Contact Details</span>
+                <input type="text" name="name" id="name" placeholder="Your Name" required>
+                <input type="email" name="email" id="email" placeholder="Your Email" required>
+                <input type="tel" name="telephone" id="telephone" placeholder="Your Number" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required>
+            </div>
+            <button type="submit">Book table</button>
+        </form>
+    </section>
+
+    <section class="reviews">
+        <h2>Customer Reviews</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+        <div class="reviews__container">
+            <div class="reviews__review">
+                <img src="images/profile-7.jpg" alt="person photo">
+                <h4>Daniel Vebar</h4>
+                <h5>Web Designer</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus
+                    dui.
+                    Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Idac bibendum scelerisque non non
+                    purus. Suspendisse varius nibh non aliquet.</p>
+            </div>
+            <div class="reviews__review">
+                <img src="images/profile-1.jpg" alt="person photo">
+                <h4>Daniel Vebar</h4>
+                <h5>Web Designer</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus
+                    dui.
+                    Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Idac bibendum scelerisque non non
+                    purus. Suspendisse varius nibh non aliquet.</p>
+            </div>
+            <div class="reviews__review">
+                <img src="images/profile-3.jpg" alt="person photo">
+                <h4>Daniel Vebar</h4>
+                <h5>Web Designer</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus
+                    dui.
+                    Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Idac bibendum scelerisque non non
+                    purus. Suspendisse varius nibh non aliquet.</p>
+            </div>
+            <div class="reviews__leftArrow"><i class="fa fa-angle-left"></i></div>
+            <div class="reviews__rightArrow"><i class="fa fa-angle-right"></i></div>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="contact__container">
+            <div class="contact__element">
+                <i class="fas fa-phone-volume"></i>
+                <div class="contact__content">
+                    <h4>Phone</h4>
+                    <p>+01 123-456-4590</p>
+                </div>
+            </div>
+            <div class="contact__element">
+                <i class="fas fa-envelope"></i>
+                <div class="contact__content">
+                    <h4>Email</h4>
+                    <p>yourmail@gmail.com</p>
+                </div>
+            </div>
+            <div class="contact__element">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="contact__content">
+                    <h4>Location</h4>
+                    <p>800, Lorem Street, US</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__element">
+                <h4>About us</h4>
+                <p>Integer cursus scelerisque ipsum id efficitur. Donec a dui fringilla, gravida lorem ac, semper magna.
+                    Aenean rhoncus ac lectus a interdum. Vivamus semper posuere dui, at ornare turpis ultrices sit amet.
+                    Nulla cursus lorem ut nisi porta, ac eleifend arcu ultrices.</p>
+            </div>
+            <div class="footer__element">
+                <h4>Opening hours</h4>
+                <p>Monday: Closed</p>
+                <p>Tue-Wed : 9:Am - 10PM</p>
+                <p>Thu-Fri : 9:Am - 10PM</p>
+                <p>Sat-Sun : 5:PM - 10PM</p>
+            </div>
+            <div class="footer__element footer__element--fontSize">
+                <h4>Contact information</h4>
+                <p>Ipsum Street, Lorem Tower, MO, Columbia, 508000</p>
+                <p>+01 2000 800 9999</p>
+                <p>@admin.com</p>
+            </div>
+            <div class="footer__element">
+                <h4>Subscribe</h4>
+                <input type="text" name="" id="footer__subscribeEmail" placeholder="Email Address...">
+                <button class="footer__subscribeButton" type="submit">Subscribe</button>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__copyright">
+            <span>All Rights Reserved. &copy; 2018 Yamifood Restaurant Design By :</span>
+        </div>
+        <div class="backToTop">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+    </footer>
+    <script src="js/navigation.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/reviews.js"></script>
+    <script src="js/scrollToTop.js"></script>
+</body>
+
+</html>
