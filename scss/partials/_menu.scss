@@ -1,0 +1,110 @@
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    h2 {
+        color: $blackColor;
+        font-size: 2.8rem;
+        font-family: $font2;
+        font-weight: normal;
+        margin-top: 80px;
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 60px;
+        font-size: 1.8rem;
+        font-weight: 200;
+    }
+
+    &__navigation {
+        display: flex;
+        justify-content: space-between;
+        border: 1px solid #e4e4e4;
+        border-radius: 5px;
+        height: 50px;
+        list-style-type: none;
+        padding: 0;
+        margin-bottom: 40px;
+
+        &__link {
+            width: 100px;
+
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                text-decoration: none;
+                text-transform: uppercase;
+                text-align: center;
+                padding-top: 14px;
+                color: $blackColor;
+            }
+
+            .active {
+                background-color: $mainColor1;
+                border-radius: 5px;
+                color: $whiteColor;
+                box-shadow: 2px 20px 45px 5px rgba($blackColor, $alpha: 0.2);
+            }
+        }
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(300px, 350px));
+        grid-auto-rows: minmax(200px, auto);
+        justify-content: center;
+        gap: 60px 30px;
+
+        @media (max-width:1100px) {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
+            width: 100%;
+        }
+    }
+
+    &__item {
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.5s ease-in-out;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        &__content {
+            position: absolute;
+            top: 0;
+            background-color: rgba($mainColor1, $alpha: 0.8);
+            width: 100%;
+            height: 100%;
+            color: $whiteColor;
+            transform: translateY(100%);
+            padding: 0 10px;
+
+            h3 {
+                font-size: 2.4rem;
+                font-family: $font2;
+            }
+
+            p {
+                font-size: 1.8rem;
+                border-bottom: 2px dashed $blackColor;
+                padding-bottom: 15px;
+            }
+
+            span {
+                font-size: 2.8rem;
+                font-weight: 600;
+            }
+        }
+
+        &:hover &__content {
+            transform: translateY(0);
+            transition: all 0.25s ease-in-out;
+        }
+    }
+}

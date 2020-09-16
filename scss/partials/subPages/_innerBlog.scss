@@ -1,0 +1,275 @@
+.innerBlog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    h2 {
+        color: $blackColor;
+        font-family: $font2;
+        font-size: 2.8rem;
+        font-weight: normal;
+        margin-bottom: 0;
+        margin-top: 60px;
+    }
+
+    p {
+        font-size: 1.8rem;
+    }
+
+    &__container {
+        display: grid;
+        grid-template-columns: 66% 33%;
+        justify-content: center;
+        max-width: 1100px;
+        column-gap: 50px;
+        margin-top: 60px;
+
+
+        @media (max-width:1200px) {
+            grid-template-columns: minmax(500px, 700px)
+        }
+    }
+
+    &__leftSide,
+    &__rightSide {
+        padding: 0 10px;
+    }
+
+    &__article {
+        position: relative;
+
+        img {
+            width: 100%;
+            box-shadow: -15px -15px 0px $fontMainColor;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        &__date {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: $mainColor1;
+            padding: 10px;
+            font-size: 1.8rem;
+            color: $whiteColor;
+        }
+
+        &__author {
+            padding-left: 30px;
+        }
+
+        &--color {
+            color: $mainColor1;
+        }
+
+        p {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        p.cite {
+            position: relative;
+            padding: 40px 40px;
+
+            &::before {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 5px;
+                background-color: $mainColor1;
+                height: 100%;
+                display: block;
+                content: '';
+                margin-left: 20px;
+
+            }
+        }
+
+        :not(img):not(span) {
+            padding: 0 20px;
+        }
+    }
+
+    &__comments {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__comment {
+        display: grid;
+        grid-template-columns: 90px 1fr;
+        margin-bottom: 30px;
+
+        img {
+            width: 100%;
+            max-width: 90px;
+            border-radius: 5px;
+        }
+
+        &__content {
+            padding: 0 15px;
+        }
+
+        &__author {
+            font-weight: 500;
+            color: $blackColor;
+        }
+
+        &__time {
+            float: right;
+        }
+
+        p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+        }
+
+        button {
+            float: right;
+            padding: 10px 25px;
+            background-color: #F5F5F5;
+            border-radius: 5px;
+            border: none;
+            font-style: italic;
+            margin-top: -20px;
+
+            &:hover {
+                background-color: $mainColor1;
+                color: $whiteColor;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .reply {
+        padding-left: 50px;
+    }
+
+    form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 50px 50px 1fr;
+        gap: 15px 40px;
+        margin-top: 20px;
+
+        input {
+            width: 100%;
+            border: 1px solid $blackColor;
+            padding-left: 10px;
+        }
+
+        input[type='text'] {
+            grid-row: 1/2;
+        }
+
+        input[type='email'] {
+            grid-row: 2/3;
+        }
+
+        textarea {
+            padding: 10px;
+            border: 1px solid $blackColor;
+            width: 100%;
+            grid-column: 2/3;
+            grid-row: 1/3;
+            resize: none;
+
+        }
+
+        button {
+            grid-column: 1/2;
+
+            @include reservationButton($whiteColor, $mainColor1) {
+                color: $mainColor1;
+            }
+
+            justify-self: start;
+        }
+    }
+
+    &__search {
+        border-bottom: 1px solid $blackColor;
+        padding-bottom: 25px;
+
+        h3 {
+            margin-top: 0;
+        }
+
+        input {
+            width: 100%;
+            height: 50px;
+            padding-left: 10px;
+        }
+    }
+
+    &__categories {
+        ul {
+            list-style-type: none;
+            padding: 0;
+
+            li {
+                padding: 10px 0;
+
+                a {
+                    text-decoration: none;
+                    color: $fontMainColor;
+
+                    &:hover {
+                        color: $mainColor1;
+                    }
+                }
+            }
+        }
+    }
+
+    &__recentPost {
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        margin-bottom: 30px;
+
+        &__content {
+            padding: 0 15px;
+
+            span {
+                font-size: 1.1rem;
+            }
+
+            p {
+                font-size: 1.4rem;
+                color: $blackColor;
+            }
+        }
+    }
+
+    &__tags {
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+
+            li {
+                padding: 10px;
+
+                a {
+                    padding: 5px 20px;
+                    border-radius: 5px;
+                    text-decoration: none;
+                    background-color: $navBackgroundColor;
+                    width: 100%;
+                    height: 100%;
+                    color: $fontMainColor;
+                    transition: all 0.5s ease;
+
+                    &:hover {
+                        background-color: $mainColor1;
+                        color: $whiteColor;
+                    }
+                }
+            }
+        }
+    }
+}

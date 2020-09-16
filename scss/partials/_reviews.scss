@@ -1,0 +1,82 @@
+.reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    h2 {
+        color: $blackColor;
+        font-family: $font2;
+        font-size: 2.8rem;
+        font-weight: normal;
+        margin-bottom: 0;
+        margin-top: 170px;
+    }
+
+    p {
+        font-size: 1.8rem;
+    }
+
+    &__container {
+        max-width: 750px;
+        position: relative;
+        overflow: hidden;
+        margin-top: 40px;
+    }
+
+    &__review {
+        padding: 0 20px;
+        display: none;
+        position: relative;
+        transition: transform 0.6s ease;
+
+        img {
+            border-radius: 50vh;
+            width: 150px;
+            border: 1px solid $fontMainColor;
+            padding: 5px;
+        }
+
+        h4 {
+            color: $mainColor1;
+            text-transform: uppercase;
+            font-size: 2.4rem;
+            margin-bottom: 0;
+        }
+
+        h5 {
+            margin-top: 10px;
+            font-weight: normal;
+        }
+
+        p {
+            font-weight: normal;
+            font-size: 1.5rem;
+            line-height: 1.8;
+        }
+
+        &.active {
+            display: block;
+        }
+
+        &.left {
+            transform: translateX(-100%);
+        }
+
+        &.right {
+            transform: translateX(100%);
+        }
+    }
+
+    &__leftArrow {
+        @include arrowButton(50px, 50px, 2.8rem) {
+            left: 0;
+        }
+    }
+
+    &__rightArrow {
+        @include arrowButton(50px, 50px, 2.8rem) {
+            right: 0;
+        }
+    }
+}

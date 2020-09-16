@@ -1,0 +1,24 @@
+.title {
+    background-image: url(../images/all-bg.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 350px;
+    width: 100%;
+    color: $whiteColor;
+    margin-top: 95px;
+
+    &__content {
+        background-color: rgba($blackColor, $alpha: 0.8);
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h2 {
+            font-size: 3.5rem;
+            font-family: $font2;
+        }
+    }
+}

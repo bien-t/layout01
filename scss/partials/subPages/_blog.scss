@@ -1,0 +1,87 @@
+.blog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+
+    h2 {
+        color: $blackColor;
+        font-family: $font2;
+        font-size: 2.8rem;
+        font-weight: normal;
+        margin-bottom: 0;
+        margin-top: 60px;
+    }
+
+    p {
+        font-size: 1.8rem;
+    }
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(300px, 350px));
+        justify-content: center;
+        gap: 30px;
+        margin-top: 60px;
+
+        @media(max-width:1100px) {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
+            width: 100%;
+        }
+
+
+    }
+
+    &__item {
+        border: 1px solid #e4e4e4;
+        position: relative;
+
+        &:hover img {
+            opacity: 0.1;
+        }
+
+        img {
+            transition: opacity 0.5s;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &__content {
+            padding: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            h4 {
+                font-size: 1.8rem;
+                font-weight: bold;
+                margin-top: 0;
+                margin-bottom: 15px;
+            }
+
+            p {
+                line-height: 1.8;
+                font-size: 1.5rem;
+            }
+
+            button {
+                @include reservationButton($whiteColor, $mainColor1) {
+                    color: $mainColor1;
+                }
+            }
+        }
+
+        &__author,
+        &__date {
+            color: $mainColor1;
+
+            &:hover {
+                color: $blackColor;
+                cursor: pointer;
+            }
+        }
+    }
+}

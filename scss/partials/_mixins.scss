@@ -1,0 +1,40 @@
+@mixin reservationButton($fontColor, $hoverColor) {
+    text-transform: uppercase;
+    border: 2px solid $mainColor1;
+    padding: 15px 30px;
+    background-color: transparent;
+    cursor: pointer;
+    color: $fontColor;
+    border-radius: 5px;
+    font-weight: bold;
+    @content;
+
+    &:hover {
+        background-color: $hoverColor;
+        color: $fontColor;
+    }
+}
+
+@mixin arrowButton($width, $height, $fontsize) {
+    height: $height;
+    width: $width;
+    background-color: $mainColor1;
+    position: absolute;
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $whiteColor;
+    cursor: pointer;
+    z-index: 5;
+
+    i {
+        font-size: $fontsize;
+    }
+
+    @content;
+
+    &:hover {
+        background-color: $blackColor;
+    }
+}
