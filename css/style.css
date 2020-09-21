@@ -6598,6 +6598,9 @@ body {
 .navigation .fa-bars {
   display: none;
   font-size: 4rem;
+  border: none;
+  background-color: transparent;
+  padding: 0;
 }
 
 @media (max-width: 800px) {
