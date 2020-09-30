@@ -6464,8 +6464,11 @@ body {
   position: relative;
   font-family: 'Athiti', sans-serif;
   color: #666666;
-  max-width: 1900px;
   min-width: 500px;
+}
+
+*:focus {
+  outline: 2px dotted darkblue;
 }
 
 .navigation {
